@@ -100,7 +100,7 @@ In the industrial sector, DC conveyor motors are commonly used to move materials
 
 <br><br>
 
-## Scanning the I2C Address on the LCD
+## CPR Calibration
 <table><tr><td width="840">
 
 ```ino
