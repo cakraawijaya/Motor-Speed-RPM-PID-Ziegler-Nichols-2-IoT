@@ -25,6 +25,9 @@ const int maxRetry = 20;
 // Menyimpan status apakah sebelumnya berhasil terkoneksi ke WiFi atau tidak
 bool wasConnected = false;
 
+// Menandakan apakah proses koneksi WiFi sedang berlangsung
+bool isWiFiConnecting = false;
+
 // Menyimpan status apakah sudah pernah mencoba koneksi atau belum
 bool hasTriedConnecting = false;
 
@@ -34,17 +37,23 @@ unsigned long lastWiFiCheckTime = 0;
 // Interval pengecekan koneksi WiFi (dalam milidetik)
 const unsigned long wifiCheckInterval = 1000;
 
+// Interval waktu antar percobaan koneksi WiFi (dalam milidetik)
+const unsigned long wifiRetryInterval = 500;
+
+// Menyimpan waktu (dalam milidetik) saat terakhir kali mencoba koneksi WiFi
+unsigned long lastWiFiRetryTime = 0;
+
 
 // Fungsi untuk menghubungkan ESP32 ke jaringan WiFi
 void connectWiFi() {
   
-  // Jika ESP32 belum terhubung ke jaringan WiFi, maka:
-  if (WiFi.status() != WL_CONNECTED) {
+  // Jika ESP32 belum dalam proses koneksi dan belum terhubung ke WiFi, maka:
+  if (!isWiFiConnecting && WiFi.status() != WL_CONNECTED) {
     
     // Mengatur mode WiFi sebagai Station (bukan Access Point)
     WiFi.mode(WIFI_STA);
     
-    // Memulai proses koneksi ke WiFi dengan SSID dan password yang telah didefinisikan
+    // Memulai koneksi ke WiFi dengan SSID dan password yang telah didefinisikan
     WiFi.begin(WIFI_NAME, WIFI_PASSWORD);
 
     // Cetak informasi awal ke Serial Monitor
@@ -53,65 +62,17 @@ void connectWiFi() {
     debugConnPrintln("==========================================================");
     debugConnPrint("Menghubungkan ke Wi-Fi");
 
-    // Selama belum terhubung dan masih dalam batas percobaan, maka:
-    while (WiFi.status() != WL_CONNECTED && retry < maxRetry) {
-      
-      // Tunggu selama 500 milidetik
-      delay(500);
-      
-      // Cetak -> titik (.), sebagai indikator proses koneksi sedang berlangsung
-      debugConnPrint(".");
-      
-      // Tambah hitungan percobaan koneksi
-      retry++;
-    }
+    // Mengatur ulang jumlah percobaan koneksi
+    retry = 0;
 
-    // Jika berhasil terhubung, maka:
-    if (WiFi.status() == WL_CONNECTED) {
-      
-      // Cetak informasi berhasil ke Serial Monitor
-      debugConnPrintln("\n\n================ STATUS KONFIGURASI WI-FI ================");
-      debugConnPrint("Berhasil tersambung ke Wi-Fi: ");
-      
-      // Cetak nama WiFi yang diperoleh dari router ke Serial Monitor
-      debugConnPrintln(WIFI_NAME);
-      
-      // Cetak alamat IP lokal yang diperoleh dari router ke Serial Monitor
-      debugConnPrint("IP Lokal: ");
-      debugConnPrintln(WiFi.localIP().toString());
-      
-      // Cek apakah alamat IP yang diperoleh, jika IP nya adalah "0.0.0.0" berarti belum mendapatkan IP yang valid dari router
-      if (WiFi.localIP().toString() == "0.0.0.0") {
-        
-        // Jika IP tidak valid, beri peringatan ke Serial Monitor bahwa koneksi perlu diulang
-        debugConnPrintln("!!! IP tidak valid. Coba ulang koneksi...");
-      }
-      
-      // Tambahkan baris kosong di Serial Monitor untuk memperjelas pemisahan log
-      debugConnPrintln("\n");
-      
-      // Mengatur agar ESP32 secara otomatis dapat menyambungkan kembali jika koneksi terputus
-      WiFi.setAutoReconnect(true);
-      
-      // Menyimpan kredensial WiFi secara permanen ke memori Flash ESP32
-      WiFi.persistent(true);
-    
-      // Menandai bahwa ESP32 saat ini sudah berhasil terhubung ke jaringan WiFi
-      wasConnected = true;
+    // Mencatat waktu saat pertama kali mencoba koneksi (digunakan untuk retry interval)
+    lastWiFiRetryTime = millis();
 
-      // Menandai bahwa ESP32 sudah pernah mencoba melakukan koneksi WiFi setidaknya sekali
-      hasTriedConnecting = true;
-    }
-    
-    // Jika gagal terhubung, maka:
-    else {
-      
-      // Cetak pesan gagal dan juga informasi tambahan ke Serial Monitor
-      debugConnPrintln("\n\n================ STATUS KONFIGURASI WI-FI ================");
-      debugConnPrintln("!!! GAGAL TERHUBUNG KE WI-FI !!!");
-      debugConnPrintln("Silakan periksa SSID dan Password WiFi Anda.");
-      debugConnPrint("ESP32 akan mencoba lagi nanti.\n\n\n");
-    }
+    // Menandai bahwa ESP32 sedang mencoba terhubung ke WiFi (untuk mencegah pemanggilan ulang)
+    isWiFiConnecting = true;
+
+    // Menandai bahwa ESP32 telah mencoba menghubungkan setidaknya sekali
+    hasTriedConnecting = true;
   }
 }
 
@@ -122,28 +83,97 @@ void checkWiFiConnection() {
   // Ambil waktu saat ini dalam milidetik sejak perangkat mulai menyala
   unsigned long currentTime = millis();
 
-  // Cek apakah waktu sejak pengecekan terakhir sudah melewati interval yang ditentukan
-  if (currentTime - lastWiFiCheckTime >= wifiCheckInterval) {
-    
-    // Update waktu pengecekan terakhir menjadi waktu saat ini
+  // Jika ESP32 sudah berhasil terhubung ke WiFi, maka:
+  if (WiFi.status() == WL_CONNECTED) {
+
+    // Jika sebelumnya belum pernah terhubung (status awal atau reconnect berhasil), maka:
+    if (!wasConnected) {
+
+      // Cetak informasi berhasil ke Serial Monitor
+      debugConnPrintln("\n\n================ STATUS KONFIGURASI WI-FI ================");
+      debugConnPrint("Berhasil tersambung ke Wi-Fi: ");
+
+      // Cetak nama WiFi yang diperoleh dari router ke Serial Monitor
+      debugConnPrintln(WIFI_NAME);
+
+      // Cetak alamat IP lokal yang diperoleh dari router ke Serial Monitor
+      debugConnPrint("IP Lokal: ");
+      debugConnPrintln(WiFi.localIP().toString());
+
+      // Jika IP tidak valid, maka:
+      if (WiFi.localIP().toString() == "0.0.0.0") {
+
+        // Cetak peringatan ke Serial Monitor bahwa koneksi perlu diulang
+        debugConnPrintln("!!! IP tidak valid. Coba ulang koneksi...");
+      }
+
+      // Mengatur agar ESP32 secara otomatis dapat menyambungkan kembali jika koneksi terputus
+      WiFi.setAutoReconnect(true);
+
+      // Menyimpan kredensial WiFi secara permanen ke memori Flash ESP32
+      WiFi.persistent(true);
+
+      // Tambahkan baris kosong di Serial Monitor untuk memperjelas pemisahan log
+      debugConnPrintln("\n");
+    }
+
+    // Menandai bahwa ESP32 saat ini sudah berhasil terhubung ke jaringan WiFi
+    wasConnected = true;
+
+    // Menandai bahwa proses koneksi WiFi telah selesai (berhasil atau gagal)
+    isWiFiConnecting = false;
+
+    // Mengatur ulang jumlah percobaan koneksi ke nol untuk persiapan retry berikutnya
+    retry = 0;
+
+    // Keluar dari fungsi karena koneksi sudah berhasil
+    return;
+  }
+
+  // Jika sedang dalam proses koneksi dan sudah waktunya melakukan retry, maka:
+  if (isWiFiConnecting && currentTime - lastWiFiRetryTime >= wifiRetryInterval) {
+
+    // Menyimpan waktu saat ini sebagai patokan untuk menentukan jeda antar percobaan koneksi WiFi berikutnya
+    lastWiFiRetryTime = currentTime;
+
+    // Tambah hitungan percobaan koneksi
+    retry++;
+
+    // Tampilkan indikator proses retry
+    debugConnPrint(".");
+
+    // Jika jumlah retry sudah mencapai batas maksimum, maka:
+    if (retry >= maxRetry) {
+
+      // Cetak pesan gagal dan juga informasi tambahan ke Serial Monitor
+      debugConnPrintln("\n\n================ STATUS KONFIGURASI WI-FI ================");
+      debugConnPrintln("!!! GAGAL TERHUBUNG KE WI-FI !!!");
+      debugConnPrintln("Silakan periksa SSID dan Password WiFi Anda.");
+      debugConnPrint("ESP32 akan mencoba lagi nanti.\n\n\n");
+
+      // Reset status koneksi agar bisa dicoba ulang nanti
+      isWiFiConnecting = false; retry = 0;
+    }
+  }
+
+  // Jika tidak sedang mencoba koneksi, tidak terhubung, dan sudah waktunya cek koneksi, maka:
+  if (!isWiFiConnecting && WiFi.status() != WL_CONNECTED && currentTime - lastWiFiCheckTime >= 1000) {
+
+    // Menyimpan waktu saat ini sebagai patokan untuk menentukan jeda antar percobaan koneksi WiFi berikutnya
     lastWiFiCheckTime = currentTime;
 
-    // Cek status koneksi WiFi, jika tidak terhubung, maka:
-    if (WiFi.status() != WL_CONNECTED) {
-      
-      // Jika sebelumnya ESP32 sudah terhubung, berarti koneksi baru saja terputus, maka:
-      if (wasConnected) {
-        
-        // Cetak pesan bahwa koneksi WiFi terputus dan ESP32 akan mencoba menyambung kembali
-        debugConnPrintln("================ STATUS KONFIGURASI WI-FI ================");
-        debugConnPrintln("Wi-Fi terputus!\nMencoba menghubungkan kembali...\n\n");
-        
-        // Tandai status koneksi bahwa sudah tidak terhubung lagi
-        wasConnected = false;
-      }
-      
-      // Panggil fungsi untuk menyambungkan kembali ke jaringan WiFi
-      connectWiFi();
+    // Jika sebelumnya ESP32 sudah terhubung, berarti koneksi baru saja terputus, maka:
+    if (wasConnected) {
+
+      // Cetak pesan bahwa koneksi WiFi terputus dan ESP32 akan mencoba menyambung kembali
+      debugConnPrintln("================ STATUS KONFIGURASI WI-FI ================");
+      debugConnPrintln("Wi-Fi terputus!\nMencoba menghubungkan kembali...\n\n");
+
+      // Tandai status koneksi bahwa sudah tidak terhubung lagi
+      wasConnected = false;
     }
+
+    // Mulai proses koneksi kembali
+    connectWiFi();
   }
 }

@@ -89,7 +89,7 @@ void publishUbidots() {
     client.publish(TOPIC.c_str(), PAYLOAD);
 
     // Tampilkan info debug terkait proses publish MQTT
-    debugPubSubPrintln("==========================================================");
+    debugPubSubPrintln("\n\n==========================================================");
     debugPubSubPrintln("PUBLISH MQTT");
     debugPubSubPrintln("==========================================================");
     debugPubSubPrintln("Topic: " + TOPIC);
@@ -147,7 +147,6 @@ void callback(char* TOPIC, byte* PAYLOAD, unsigned int length) {
     // Tampilkan nilai RPM yang diterima
     debugPubSubPrint("RPM: ");
     debugPubSubPrintln(String((int)value));
-    debugPubSubPrint("\n\n");
   }
   
   // Cek apakah topik saat ini mengandung VARIABLE_LABEL2 (ON/OFF), jika iya maka:
@@ -159,7 +158,6 @@ void callback(char* TOPIC, byte* PAYLOAD, unsigned int length) {
     // Atur status motor ini berdasarkan nilai yang diterima (1 = ON, 0 = OFF)
     motorEnabled = ((int)value == 1);
     debugPubSubPrintln(motorEnabled ? "Menyala" : "Mati");
-    debugPubSubPrint("\n\n");
 
     // Kirim data Status ON/OFF Motor pada topik yang sudah dibuat di platform Ubidots
     addUbidots(VARIABLE_LABEL2, motorEnabled ? 1 : 0);
@@ -177,7 +175,6 @@ void callback(char* TOPIC, byte* PAYLOAD, unsigned int length) {
     // Atur Arah Motor ini berdasarkan nilai yang diterima (0 = Maju, 1 = Mundur)
     directionForward = ((int)value == 0);
     debugPubSubPrintln(directionForward ? "Maju" : "Mundur");
-    debugPubSubPrint("\n\n");
 
     // Kirim data Status Arah Putaran Motor pada topik yang sudah dibuat di platform Ubidots
     addUbidots(VARIABLE_LABEL3, directionForward ? 0 : 1);
