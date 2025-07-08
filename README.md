@@ -72,6 +72,25 @@ In the industrial sector, DC conveyor motors are commonly used to move materials
 </table>
 <table>
 <tr>
+<th width="840" colspan="2">Prototype Design</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Diagram/Prototype Design 1.jpg" alt="prototype-design-1"></td>
+<td><img src="Assets/Documentation/Diagram/Prototype Design 2.jpg" alt="prototype-design-2"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="3">Conveyor System Blueprint</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Table/Blueprint 1.jpg" alt="blueprint-1"></td>
+<td><img src="Assets/Documentation/Table/Blueprint 2.jpg" alt="blueprint-2"></td>
+<td><img src="Assets/Documentation/Table/Blueprint 3.jpg" alt="blueprint-3"></td>
+</tr>
+</table>
+<table>
+<tr>
 <th width="840">Wiring</th>
 </tr>
 <tr>
