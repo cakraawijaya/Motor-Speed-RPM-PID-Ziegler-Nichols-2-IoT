@@ -100,6 +100,157 @@ In the industrial sector, DC conveyor motors are commonly used to move materials
 
 <br><br>
 
+## Scanning the I2C Address on the LCD
+<table><tr><td width="840">
+
+```ino
+// Library to read Magnetic/Optical Encoder with ESP32
+#include <ESP32Encoder.h>
+
+// Channel A of the encoder is connected to GPIO pin 34
+#define encoderA 34
+
+// Channel B of the encoder is connected to GPIO pin 35
+#define encoderB 35
+
+// Encoder object from the ESP32Encoder library
+ESP32Encoder encoder;
+
+// Encoder initial count (when starting calibration)
+long startEncoderCount = 0;      
+
+// Previous encoder count (to calculate delta)
+long lastEncoderCount = 0;
+
+// Difference between current and previous count
+long deltaEncoderCount = 0;
+
+// Count per Revolution (number of counts in one full revolution)
+float CPR = 0;
+
+// Pulse per Revolution (number of pulses of 1 channel in one revolution)
+float PPR = 0;
+
+// Gearbox ratio between motor and output shaft
+float gearRatio = 0;
+
+// PPR internal encoder (usually 11, depending on motor specifications)
+const float encoderPPR_Internal = 11.0;
+
+// Total estimated output shaft rotation
+float totalOutputRotation = 0;
+
+// Output shaft rotation target for calibration (default: 1 full rotation)
+int outputRotationTarget = 1;
+
+// Status of whether the calibration has been completed
+bool calibrationDone = false;
+
+
+// Function to display the guide on the Serial Monitor
+void showInstructions() {
+  Serial.println("================================================");
+  Serial.println("                 CPR CALIBRATION                ");
+  Serial.println("================================================");
+  Serial.println("Steps:");
+  Serial.println("1. Make sure the motor and encoder are connected.");
+  Serial.println("2. Turn the OUTPUT shaft clockwise.");
+  Serial.println("3. Rotate 1x full (360 degrees) steadily.");
+  Serial.println("4. Wait for the calibration result to appear.");
+  Serial.println("------------------------------------------------");
+}
+
+
+// The setup function will be executed once when the ESP32 board is powered on
+void setup() {
+  
+  // Initialize Serial communication with baudrate 115200
+  Serial.begin(115200);
+
+  // Connect encoder with Full Quadrature method (4x resolution)
+  encoder.attachFullQuad(encoderB, encoderA);
+
+  // Reset encoder count to 0
+  encoder.clearCount();
+
+  // Save the initial count as a reference
+  lastEncoderCount = encoder.getCount();
+
+  // Also save as initial calibration value
+  startEncoderCount = lastEncoderCount;
+
+  while (!Serial) {
+    ; // Wait for the Serial Monitor to be ready
+  }
+
+  // Delay to ensure Serial Monitor is completely ready
+  delay(5000);
+  
+  // Display calibration instructions to user
+  showInstructions();
+}
+
+
+// The loop function will be executed repeatedly (continuously)
+void loop() {
+  
+  // If the calibration is complete, stop the loop (do nothing)
+  if (calibrationDone) return;
+
+  // Read the current encoder count value
+  long currentCount = encoder.getCount();
+  
+  // Calculate the change from the last reading
+  deltaEncoderCount = currentCount - lastEncoderCount;
+
+  // Estimation of output rotation increment, based on encoder count change
+  // Only if forward rotation occurs
+  if (deltaEncoderCount > 0) {
+
+    // Add to total output revolutions (500 is just an initial estimate)
+    totalOutputRotation += deltaEncoderCount / 500.0;
+
+    // If the total output rotation has reached the target (e.g. 1 full rotation)
+    if (totalOutputRotation >= outputRotationTarget) {
+      
+      // Mark calibration complete
+      calibrationDone = true;
+
+      // Total encoder count for 1 revolution
+      long totalCountsInOneRotation = currentCount - startEncoderCount;
+
+      // Count Per Revolution
+      CPR = (float)totalCountsInOneRotation;
+
+      // Counts per pulse (due to Full Quad, divided by 4)
+      PPR = CPR / 4.0;
+
+      // Estimated gearbox ratio
+      gearRatio = CPR / (encoderPPR_Internal * 4.0);
+
+      // Round up results for easier reading
+      int PPR_rounded = round(PPR);
+      int CPR_rounded = round(CPR);
+      int gearRatio_rounded = round(gearRatio);
+
+      // Display calibration results
+      Serial.println();
+      Serial.println("================ CALIBRATION RESULT ===============");
+      Serial.print("PPR (Pulse/Revolusi)   =  "); Serial.println(PPR_rounded);
+      Serial.print("CPR (Count/Revolusi)   =  "); Serial.println(CPR_rounded);
+      Serial.print("Gear Ratio (Motor:Out) =  1:"); Serial.println(gearRatio_rounded);
+      Serial.println("================================================");
+      Serial.println("✅ Calibration completed. Use the above values.");
+    }
+  }
+
+  // Last encoder count update
+  lastEncoderCount = currentCount;
+}
+```
+
+</td></tr></table><br><br>
+
 ## Arduino IDE Setup
 1. Open the ``` Arduino IDE ``` first, then open the project by clicking ``` File ``` -> ``` Open ``` : 
 
