@@ -208,7 +208,85 @@ Coming Soon...
 <br><br>
 
 ## Highlights
-Coming Soon...
+<table>
+<tr>
+<th width="840" colspan="2">Product</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Experiment/Product 1.jpg" alt="product-1"></td>
+<td><img src="Assets/Documentation/Experiment/Product 2.jpg" alt="product-2"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="3">Wi-Fi Connectivity</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 1.jpg" alt="wifi-connectivity-1"></td>
+<td><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 2.jpg" alt="wifi-connectivity-2"></td>
+<td><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 3.jpg" alt="wifi-connectivity-3"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="4">IoT Connectivity</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Experiment/IoT Connectivity 1.jpg" alt="iot-connectivity-1"></td>
+<td><img src="Assets/Documentation/Experiment/IoT Connectivity 2.jpg" alt="iot-connectivity-2"></td>
+<td><img src="Assets/Documentation/Experiment/IoT Connectivity 3.jpg" alt="iot-connectivity-3"></td>
+<td><img src="Assets/Documentation/Experiment/IoT Connectivity 4.jpg" alt="iot-connectivity-4"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="4">Publish-Subscribe MQTT</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 1.jpg" alt="pubsub-mqtt-1"></td>
+<td><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 2.jpg" alt="pubsub-mqtt-2"></td>
+<td><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 3.jpg" alt="pubsub-mqtt-3"></td>
+<td><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 4.jpg" alt="pubsub-mqtt-4"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="840" colspan="5">LCD View</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Experiment/LCD View 1.jpg" alt="lcd-view-1"></td>
+<td><img src="Assets/Documentation/Experiment/LCD View 2.jpg" alt="lcd-view-2"></td>
+<td><img src="Assets/Documentation/Experiment/LCD View 3.jpg" alt="lcd-view-3"></td>
+<td><img src="Assets/Documentation/Experiment/LCD View 4.jpg" alt="lcd-view-4"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="420">Serial Monitor</th>
+<th width="420">Serial Plotter</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Experiment/Serial Monitor.jpg" alt="serial-monitor"></td>
+<td><img src="Assets/Documentation/Experiment/Serial Plotter.jpg" alt="serial-plotter"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th width="420">Ubidots Controls and Indicators</th>
+<th width="420">Ubidots Line Chart</th>
+</tr>
+<tr>
+<td><img src="Assets/Documentation/Experiment/Ubidots Controls and Indicators.jpg" alt="control-indicators"></td>
+<td><img src="Assets/Documentation/Experiment/Ubidots Line Chart.jpg" alt="line-chart"></td>
+</tr>
+</table>
+
+<br><br>
+<strong>More information:</strong><br>
+<table><tr><td width="840">
+   • Undergraduate Thesis : <a href="https://repository.upnjatim.ac.id/38675"><u>Access 1</u></a> or <a href="https://github.com/cakraawijaya/Motor-Speed-RPM-PID-Ziegler-Nichols-2-IoT/tree/master/Assets/Documentation/Report"><u>Access 2</u></a><br><br>
+   • Journals : <a href="https://journal.citradharma.org/index.php/literasinusantara/article/view/1593"><u>Click Here</u></a>
+</td></tr></table>
 
 <br><br>
 
