@@ -6,7 +6,7 @@
 
 # Motor-Speed-RPM-PID-Ziegler-Nichols-2-IoT
 <strong>Undergraduate Thesis Project Documentation (S1) - Informatics UPN Veteran Jatim</strong><br><br>
-Coming Soon...
+In the industrial sector, DC conveyor motors are commonly used to move materials efficiently. Maintaining a stable speed is essential to ensure product quality and smooth production. Previous research faced issues with microcontroller selection and suboptimal PID implementation. Remote control was underutilized, and system integration was not fully synchronized. These shortcomings affected the flexibility and reliability of the conveyor. This project aims to improve speed control with IoT integration. The ESP32 microcontroller manages ON/OFF functions, rotation direction, and RPM setpoint. Ubidots serves as the remote monitoring and control platform. The Ziegler-Nichols PID method is applied to stabilize motor speed. The project was developed over one year and is expected to enhance the efficiency and reliability of small-scale industrial automation.
 
 <br><br>
 
@@ -24,7 +24,7 @@ Coming Soon...
 | Actuators | • Motor DC JGA25-370 (x1) |
 | Sensor | • Encoder Sensor (x1)<br>• Potentiometer (x1) |
 | Display | LCD I2C (x1) |
-| Other Components | • USB type C - USB type A cable (x1)<br>• Jumper cable (1 set)<br>• Socket female jack DC (x1)<br>• Push button 12 x 12 mm (x2)<br>• Motor driver L298N (x1)<br>• Adaptor 12V 2A (x1)<br>• Adaptor 5V 2A (x1)<br>• Breadboard (x1)<br>• Plywood 50 x 50 cm (x2)<br>• Stainless Steel Concrete 30 cm (x1)<br>• 1/2 Inch Pipe 25 cm (x1)<br>• Oscar fabric 50 x 137 cm (x1)<br>• Spicer bolts (1 set)<br>• Bolts plus (1 set)<br>• Nuts (1 set)<br>• L Bracket (1 set)<br>• PVC Electrical insulation (1 set)<br>• Sandpaper G-180 1 m (x1) |
+| Other Components | • USB type C - USB type A cable (x1)<br>• Jumper cable (1 set)<br>• Female DC power adapter (x1)<br>• Push button 12 x 12 mm (x2)<br>• Motor driver L298N (x1)<br>• Adaptor 12V 2A (x1)<br>• Adaptor 5V 2A (x1)<br>• Breadboard (x1)<br>• Plywood 50 x 50 cm (x2)<br>• Stainless Steel Concrete 30 cm (x1)<br>• 1/2 Inch Pipe 25 cm (x1)<br>• Oscar fabric 50 x 137 cm (x1)<br>• Spicer bolts (1 set)<br>• Bolts plus (1 set)<br>• Nuts (1 set)<br>• L Bracket (1 set)<br>• PVC Electrical insulation (1 set)<br>• Sandpaper G-180 1 m (x1) |
 
 <br><br>
 
@@ -57,7 +57,91 @@ Coming Soon...
 <br><br>
 
 ## Arduino IDE Setup
-Coming Soon...
+1. Open the ``` Arduino IDE ``` first, then open the project by clicking ``` File ``` -> ``` Open ``` : 
+
+   <table><tr><td width="810">
+   
+      ``` Main.ino ```
+
+   </td></tr></table><br>
+   
+2. Fill in the ``` Additional Board Manager URLs ``` in Arduino IDE
+
+   <table><tr><td width="810">
+      
+      Click ``` File ``` -> ``` Preferences ``` -> enter the ``` Boards Manager Url ``` by copying the following link :
+      
+      ```
+      https://dl.espressif.com/dl/package_esp32_index.json
+      ```
+
+   </td></tr></table><br>
+   
+3. ``` Board Setup ``` in Arduino IDE
+
+   <table>
+      <tr><th width="810">
+
+      How to setup the ``` DOIT ESP32 DEVKIT V1 ``` board
+            
+      </th></tr>
+      <tr><td>
+      
+      • Click ``` Tools ``` -> ``` Board ``` -> ``` Boards Manager ``` -> Install ``` esp32 ```. 
+      
+      • Then selecting a Board by clicking: ``` Tools ``` -> ``` Board ``` -> ``` ESP32 Arduino ``` -> ``` DOIT ESP32 DEVKIT V1 ```.
+
+   </td></tr></table><br>
+   
+4. ``` Change the Board Speed ``` in Arduino IDE
+
+   <table><tr><td width="810">
+      
+      Click ``` Tools ``` -> ``` Upload Speed ``` -> ``` 115200 ```
+
+   </td></tr></table><br>
+   
+5. ``` Install Library ``` in Arduino IDE
+
+   <table><tr><td width="810">
+      
+      Download all the library zip files. Then paste it in the: ``` C:\Users\Computer_Username\Documents\Arduino\libraries ```
+
+   </td></tr></table><br>
+
+6. ``` Port Setup ``` in Arduino IDE
+
+   <table><tr><td width="810">
+      
+      Click ``` Port ``` -> Choose according to your device port ``` (you can see in device manager) ```
+
+   </td></tr></table><br>
+
+7. Change the ``` WiFi Name ```, ``` WiFi Password ```, and so on according to what you are currently using.<br><br>
+
+8. Before uploading the program please click: ``` Verify ```.<br><br>
+
+9. If there is no error in the program code, then please click: ``` Upload ```.<br><br>
+    
+10. Some things you need to do when using the ``` ESP32 board ``` :
+
+    <table><tr><td width="810">
+       
+       • If ``` ESP32 board ``` cannot process ``` Source Code ``` totally -> Press ``` EN (RST) ``` button -> ``` Restart ```.
+
+       • If ```ESP32 board ``` cannot process ``` Source Code ``` automatically then :<br>
+
+      - When information: ``` Uploading... ``` has appeared -> immediately press and hold the ``` BOOT ``` button.<br>
+
+      - When information: ``` Writing at .... (%) ``` has appeared -> release the ``` BOOT ``` button.
+
+      • If message: ``` Done Uploading ``` has appeared -> ``` The previously entered program can already be operated ```.
+
+      • Do not press the ``` BOOT ``` and ``` EN ``` buttons at the same time as this may switch to ``` Upload Firmware ``` mode.
+
+    </td></tr></table><br>
+
+11. If there is still a problem when uploading the program, then try checking the ``` driver ``` / ``` port ``` / ``` others ``` section.
 
 <br><br>
 
