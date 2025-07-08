@@ -409,6 +409,7 @@ Coming Soon...
 <td><img src="Assets/Documentation/Experiment/LCD View 2.jpg" alt="lcd-view-2"></td>
 <td><img src="Assets/Documentation/Experiment/LCD View 3.jpg" alt="lcd-view-3"></td>
 <td><img src="Assets/Documentation/Experiment/LCD View 4.jpg" alt="lcd-view-4"></td>
+<td><img src="Assets/Documentation/Experiment/LCD View 5.jpg" alt="lcd-view-5"></td>
 </tr>
 </table>
 <table>
