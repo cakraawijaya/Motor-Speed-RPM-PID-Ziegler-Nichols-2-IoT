@@ -1,0 +1,7 @@
+Folder / Direktori ini isinya meliputi:
+
+1. Source Code (.rar), isinya kode program skripsi.
+
+2. Gambar2 (.rar), isinya yaitu grafik, dll yang berkaitan dengan proyek skripsi (.jpg/.png/.psd).
+
+3. Laporan Skripsi lengkap (.pdf).
