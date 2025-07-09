@@ -437,7 +437,7 @@ Coming Soon...
 <strong>More information:</strong><br>
 <table><tr><td width="840">
    • Undergraduate Thesis : <a href="https://repository.upnjatim.ac.id/38675"><u>Access 1</u></a> or <a href="https://github.com/cakraawijaya/Motor-Speed-RPM-PID-Ziegler-Nichols-2-IoT/tree/master/Assets/Documentation/Report"><u>Access 2</u></a><br><br>
-   • Journals : <a href="https://journal.citradharma.org/index.php/literasinusantara/article/view/1593"><u>Click Here</u></a>
+   • Journal : <a href="https://journal.citradharma.org/index.php/literasinusantara/article/view/1593"><u>Click Here</u></a>
 </td></tr></table>
 
 <br><br>
