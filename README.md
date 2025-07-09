@@ -75,8 +75,8 @@ In the industrial sector, DC conveyor motors are commonly used to move materials
 <th width="840" colspan="2">Prototype Design</th>
 </tr>
 <tr>
-<td><img src="Assets/Documentation/Diagram/Prototype Design 1.jpg" alt="prototype-design-1"></td>
-<td><img src="Assets/Documentation/Diagram/Prototype Design 2.jpg" alt="prototype-design-2"></td>
+<td width="420"><img src="Assets/Documentation/Diagram/Prototype Design 1.jpg" alt="prototype-design-1"></td>
+<td width="420"><img src="Assets/Documentation/Diagram/Prototype Design 2.jpg" alt="prototype-design-2"></td>
 </tr>
 </table>
 <table>
@@ -84,9 +84,9 @@ In the industrial sector, DC conveyor motors are commonly used to move materials
 <th width="840" colspan="3">Conveyor System Blueprint</th>
 </tr>
 <tr>
-<td><img src="Assets/Documentation/Diagram/Blueprint 1.jpg" alt="blueprint-1"></td>
-<td><img src="Assets/Documentation/Diagram/Blueprint 2.jpg" alt="blueprint-2"></td>
-<td><img src="Assets/Documentation/Diagram/Blueprint 3.jpg" alt="blueprint-3"></td>
+<td width="280"><img src="Assets/Documentation/Diagram/Blueprint 1.jpg" alt="blueprint-1"></td>
+<td width="280"><img src="Assets/Documentation/Diagram/Blueprint 2.jpg" alt="blueprint-2"></td>
+<td width="280"><img src="Assets/Documentation/Diagram/Blueprint 3.jpg" alt="blueprint-3"></td>
 </tr>
 </table>
 <table>
@@ -364,8 +364,8 @@ Coming Soon...
 <th width="840" colspan="2">Product</th>
 </tr>
 <tr>
-<td><img src="Assets/Documentation/Experiment/Product 1.jpg" alt="product-1"></td>
-<td><img src="Assets/Documentation/Experiment/Product 2.jpg" alt="product-2"></td>
+<td width="420"><img src="Assets/Documentation/Experiment/Product 1.jpg" alt="product-1"></td>
+<td width="420"><img src="Assets/Documentation/Experiment/Product 2.jpg" alt="product-2"></td>
 </tr>
 </table>
 <table>
@@ -373,9 +373,9 @@ Coming Soon...
 <th width="840" colspan="3">Wi-Fi Connectivity</th>
 </tr>
 <tr>
-<td><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 1.jpg" alt="wifi-connectivity-1"></td>
-<td><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 2.jpg" alt="wifi-connectivity-2"></td>
-<td><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 3.jpg" alt="wifi-connectivity-3"></td>
+<td width="280"><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 1.jpg" alt="wifi-connectivity-1"></td>
+<td width="280"><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 2.jpg" alt="wifi-connectivity-2"></td>
+<td width="280"><img src="Assets/Documentation/Experiment/Wi-Fi Connectivity 3.jpg" alt="wifi-connectivity-3"></td>
 </tr>
 </table>
 <table>
@@ -383,10 +383,10 @@ Coming Soon...
 <th width="840" colspan="4">IoT Connectivity</th>
 </tr>
 <tr>
-<td><img src="Assets/Documentation/Experiment/IoT Connectivity 1.jpg" alt="iot-connectivity-1"></td>
-<td><img src="Assets/Documentation/Experiment/IoT Connectivity 2.jpg" alt="iot-connectivity-2"></td>
-<td><img src="Assets/Documentation/Experiment/IoT Connectivity 3.jpg" alt="iot-connectivity-3"></td>
-<td><img src="Assets/Documentation/Experiment/IoT Connectivity 4.jpg" alt="iot-connectivity-4"></td>
+<td width="210"><img src="Assets/Documentation/Experiment/IoT Connectivity 1.jpg" alt="iot-connectivity-1"></td>
+<td width="210"><img src="Assets/Documentation/Experiment/IoT Connectivity 2.jpg" alt="iot-connectivity-2"></td>
+<td width="210"><img src="Assets/Documentation/Experiment/IoT Connectivity 3.jpg" alt="iot-connectivity-3"></td>
+<td width="210"><img src="Assets/Documentation/Experiment/IoT Connectivity 4.jpg" alt="iot-connectivity-4"></td>
 </tr>
 </table>
 <table>
@@ -394,10 +394,10 @@ Coming Soon...
 <th width="840" colspan="4">Publish-Subscribe MQTT</th>
 </tr>
 <tr>
-<td><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 1.jpg" alt="pubsub-mqtt-1"></td>
-<td><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 2.jpg" alt="pubsub-mqtt-2"></td>
-<td><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 3.jpg" alt="pubsub-mqtt-3"></td>
-<td><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 4.jpg" alt="pubsub-mqtt-4"></td>
+<td width="210"><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 1.jpg" alt="pubsub-mqtt-1"></td>
+<td width="210"><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 2.jpg" alt="pubsub-mqtt-2"></td>
+<td width="210"><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 3.jpg" alt="pubsub-mqtt-3"></td>
+<td width="210"><img src="Assets/Documentation/Experiment/Publish-Subscribe MQTT 4.jpg" alt="pubsub-mqtt-4"></td>
 </tr>
 </table>
 <table>
@@ -405,11 +405,11 @@ Coming Soon...
 <th width="840" colspan="5">LCD View</th>
 </tr>
 <tr>
-<td><img src="Assets/Documentation/Experiment/LCD View 1.jpg" alt="lcd-view-1"></td>
-<td><img src="Assets/Documentation/Experiment/LCD View 2.jpg" alt="lcd-view-2"></td>
-<td><img src="Assets/Documentation/Experiment/LCD View 3.jpg" alt="lcd-view-3"></td>
-<td><img src="Assets/Documentation/Experiment/LCD View 4.jpg" alt="lcd-view-4"></td>
-<td><img src="Assets/Documentation/Experiment/LCD View 5.jpg" alt="lcd-view-5"></td>
+<td width="168"><img src="Assets/Documentation/Experiment/LCD View 1.jpg" alt="lcd-view-1"></td>
+<td width="168"><img src="Assets/Documentation/Experiment/LCD View 2.jpg" alt="lcd-view-2"></td>
+<td width="168"><img src="Assets/Documentation/Experiment/LCD View 3.jpg" alt="lcd-view-3"></td>
+<td width="168"><img src="Assets/Documentation/Experiment/LCD View 4.jpg" alt="lcd-view-4"></td>
+<td width="168"><img src="Assets/Documentation/Experiment/LCD View 5.jpg" alt="lcd-view-5"></td>
 </tr>
 </table>
 <table>
