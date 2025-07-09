@@ -92,7 +92,7 @@ void updatePid() {
   // Konversi pulsa per detik ke RPM (Rotasi per menit)
   input = abs((float(ticksPerSecond) / CPR) * 60.0);
   
-  // Jika Arah Motor mundur, buat Input negatif
+  // Jika Arah Motor mundur, jadikan Input negatif menjadi positif
   if (!directionForward) input *= abs(-1);
 
   // Motor dianggap aktif jika Enabled dan SetPoint RPM cukup tinggi
