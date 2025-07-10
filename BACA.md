@@ -5,7 +5,7 @@
 ![Type](https://img.shields.io/badge/Type-Skripsi-light.svg?style=flat&logo=gitbook&logoColor=white&color=%23F7DF1E)
 
 # Motor-Speed-RPM-PID-Ziegler-Nichols-2-IoT
-<strong>Dokumentasi Skripsi - Informatika UPN Veteran Jatim</strong><br><br>
+<strong>Dokumentasi Proyek Skripsi - Informatika UPN Veteran Jatim</strong><br><br>
 Di sektor industri, motor konveyor DC biasanya digunakan untuk memindahkan material secara efisien. Mempertahankan kecepatan yang stabil sangat penting untuk memastikan kualitas produk dan kelancaran produksi. Penelitian sebelumnya menghadapi masalah dengan pemilihan mikrokontroler dan implementasi PID yang kurang optimal. Kendali jarak jauh kurang dimanfaatkan, dan integrasi sistem tidak sepenuhnya tersinkronisasi. Kekurangan ini memengaruhi fleksibilitas dan keandalan konveyor. Proyek ini bertujuan untuk meningkatkan kontrol kecepatan dengan integrasi IoT. Mikrokontroler ESP32 mengelola fungsi ON/OFF, arah rotasi, dan setpoint RPM. Ubidots berfungsi sebagai platform pemantauan dan kontrol jarak jauh. Metode PID Ziegler-Nichols diterapkan untuk menstabilkan kecepatan motor. Proyek ini dikembangkan selama satu tahun dan diharapkan dapat meningkatkan efisiensi dan keandalan otomasi industri skala kecil.
 
 <br><br>
