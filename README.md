@@ -542,7 +542,7 @@ If this work is useful to you, then support this work as a form of appreciation 
 <br><br>
 
 ## Disclaimer
-This application is the result of the hard work of my colleague named Hawin, not the result of plagiarism from other people's research or work, except those related to third-party services which include: libraries, frameworks, and so on. In this project I only act as a supervisor. The publication of this work has obtained permission from the parties concerned in accordance with what was agreed at the beginning for the development of science.
+This application is the result of the hard work of my colleague named Hawin, not the result of plagiarism from other people's research or work, except those related to third-party services which include: libraries, frameworks, and so on. In this project I only act as a supervisor. The publication of this work has obtained permission from the parties concerned in accordance with what was agreed at the beginning, namely for the development of science.
 
 <br><br>
 
