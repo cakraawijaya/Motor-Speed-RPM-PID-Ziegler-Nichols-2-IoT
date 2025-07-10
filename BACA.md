@@ -21,7 +21,7 @@ Di sektor industri, motor konveyor DC biasanya digunakan untuk memindahkan mater
 | Arsitektur IoT | 3 Lapisan |
 | Bahasa Pemrograman | C/C++ |
 | Pustaka Arduino | • WiFi (default)<br>• PubSubClient<br>• LiquidCrystal_I2C<br>• ArduinoJson<br>• ESP32Encoder |
-| Aktuator | • Motor DC JGA25-370 (x1) |
+| Aktuator | Motor DC JGA25-370 (x1) |
 | Sensor | Sensor Encoder (x1) |
 | Layar | LCD I2C (x1) |
 | Komponen Lainnya | • Kabel USB tipe C - USB tipe A (x1)<br>• Kabel jumper (1 set)<br>• Female DC power adapter (x1)<br>• Tombol tekan 12 x 12 mm (x2)<br>• Motor driver L298N (x1)<br>• Potensiometer (x1)<br>• Adaptor 12V 2A (x1)<br>• Adaptor 5V 2A (x1)<br>• Breadboard (x1)<br>• Kayu triplek 50 x 50 cm (x2)<br>• Beton Baja Stainless Steel 30 cm (x1)<br>• Pipa 1/2 Inchi 25 cm (x1)<br>• Kain Oscar 50 x 137 cm (x1)<br>• Baut spicer (1 set)<br>• Baut plus (1 set)<br>• Mur (1 set)<br>• Braket L (1 set)<br>• Isolasi listrik PVC (1 set)<br>• Amplas G-180 1 m (x1) |
@@ -284,7 +284,7 @@ void loop() {
       
       • Klik ``` Tools ``` -> ``` Board ``` -> ``` Boards Manager ``` -> Instal ``` esp32 ```.
    
-      • Kemudian klik ``` Tools ``` -> ``` Board ``` -> ``` ESP32 Arduino ``` -> ``` DOIT ESP32 DEVKIT V1 ```.
+      • Kemudian pilih papan dengan mengklik: ``` Tools ``` -> ``` Board ``` -> ``` ESP32 Arduino ``` -> ``` DOIT ESP32 DEVKIT V1 ```.
 
       </td></tr>
    </table><br>
@@ -412,7 +412,7 @@ void loop() {
    
       • Klik ``` + Add new widget ```.
    
-      • Pilih ``` Indicator ``` untuk kontrol ON/OFF dan untuk kontrol arah putaran motor DC.
+      • Pilih ``` Indicator ``` untuk mengetahui status ON/OFF dan status arah putaran motor DC.
    
       • Silakan atur variabel yang ingin anda gunakan pada widget yaitu dengan cara klik ``` + ADD VARIABLE ```, kemudian klik ``` ✅ Checklist ``` untuk menyimpan.
    
@@ -543,7 +543,7 @@ Jika karya ini bermanfaat bagi anda, maka dukunglah karya ini sebagai bentuk apr
 <br><br>
 
 ## Penafian
-Aplikasi ini merupakan hasil kerja keras rekan saya yang bernama Hawin, bukan merupakan hasil plagiat dari penelitian atau karya orang lain, kecuali yang berkaitan dengan layanan pihak ketiga yang meliputi: library, framework, dan lain sebagainya. Dalam proyek ini saya hanya bertindak sebagai mentor. Publikasi karya ini telah mendapatkan ijin dari pihak-pihak yang bersangkutan sesuai dengan yang telah disepakati di awal, yaitu untuk pengembangan ilmu pengetahuan.
+Aplikasi ini merupakan hasil kerja keras rekan saya yang bernama Hawin, bukan merupakan hasil plagiat dari penelitian atau karya orang lain, kecuali yang berkaitan dengan layanan pihak ketiga yang meliputi: library, framework, dan lain sebagainya. Dalam proyek ini saya hanya bertindak sebagai mentor. Publikasi karya ini telah mendapatkan ijin dari pihak yang bersangkutan sesuai dengan yang telah disepakati di awal, yaitu untuk pengembangan ilmu pengetahuan.
 
 <br><br>
 

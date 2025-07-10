@@ -21,7 +21,7 @@ In the industrial sector, DC conveyor motors are commonly used to move materials
 | IoT Architecture | 3 Layer |
 | Programming Language | C/C++ |
 | Arduino Library | • WiFi (default)<br>• PubSubClient<br>• LiquidCrystal_I2C<br>• ArduinoJson<br>• ESP32Encoder |
-| Actuators | • Motor DC JGA25-370 (x1) |
+| Actuators | Motor DC JGA25-370 (x1) |
 | Sensor | Encoder Sensor (x1) |
 | Display | LCD I2C (x1) |
 | Other Components | • USB type C - USB type A cable (x1)<br>• Jumper cable (1 set)<br>• Female DC power adapter (x1)<br>• Push button 12 x 12 mm (x2)<br>• Motor driver L298N (x1)<br>• Potentiometer (x1)<br>• Adaptor 12V 2A (x1)<br>• Adaptor 5V 2A (x1)<br>• Breadboard (x1)<br>• Plywood 50 x 50 cm (x2)<br>• Stainless Steel Concrete 30 cm (x1)<br>• 1/2 Inch Pipe 25 cm (x1)<br>• Oscar fabric 50 x 137 cm (x1)<br>• Spicer bolts (1 set)<br>• Bolts plus (1 set)<br>• Nuts (1 set)<br>• L Bracket (1 set)<br>• PVC Electrical insulation (1 set)<br>• Sandpaper G-180 1 m (x1) |
@@ -411,7 +411,7 @@ void loop() {
    
       • Click ``` + Add new widget ```.
    
-      • Select ``` Indicator ``` for ON/OFF control and for DC motor rotation direction control.
+      • Select ``` Indicator ``` to know the ON/OFF status and rotation direction status of the DC motor.
    
       • Please set the variables that you want to use on the widget by clicking ``` + ADD VARIABLE ```, then click ``` ✅ Checklist ``` to save.
    
@@ -542,7 +542,7 @@ If this work is useful to you, then support this work as a form of appreciation 
 <br><br>
 
 ## Disclaimer
-This application is the result of the hard work of my colleague named Hawin, not the result of plagiarism from other people's research or work, except those related to third-party services which include: libraries, frameworks, and so on. In this project I only act as a supervisor. The publication of this work has obtained permission from the parties concerned in accordance with what was agreed at the beginning, namely for the development of science.
+This application is the result of the hard work of my colleague named Hawin, not the result of plagiarism from other people's research or work, except those related to third-party services which include: libraries, frameworks, and so on. In this project I only act as a supervisor. The publication of this work has obtained permission from the party concerned in accordance with what was agreed at the beginning, namely for the development of science.
 
 <br><br>
 
