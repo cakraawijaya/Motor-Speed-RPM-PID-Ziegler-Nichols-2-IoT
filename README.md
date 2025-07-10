@@ -341,7 +341,85 @@ void loop() {
 <br><br>
 
 ## Ubidots Setup
-Coming Soon...
+1. Getting started with Ubidots :
+
+   <table><tr><td width="810">
+   
+      • Please <a href="https://industrial.ubidots.com/accounts/signin/">Log in</a> to access the ``` Ubidots ``` service.
+      
+      • If you don't have a ``` Ubidots ``` account yet, please create one.
+
+   </td></tr></table><br>
+
+2. Creating dashboards : 
+
+   <table><tr><td width="810">
+   
+      • In the ``` Data ``` section -> select ``` Dashboards ``` menu.
+   
+      • Delete the Ubidots built-in demo dashboard before creating a new dashboard.
+   
+      • Click ``` Add new Dashboard ```.
+   
+      • ``` Name ```, ``` Tags ```, ``` Default time range ``` -> customize it to your needs.
+
+      • ``` Dynamic Dashboard ``` -> change it to ``` Dynamic (Single Device) ```.
+
+      • ``` Default Device ``` -> select the device you want to display.
+
+      • Leave the other settings alone -> then click ``` SAVE ```.
+
+   </td></tr></table><br>
+
+3. Creating line chart widget :
+
+   <table><tr><td width="810">
+   
+      • Make sure you are in the ``` Dashboards ``` menu.
+   
+      • Click ``` + Add new widget ```.
+   
+      • Select ``` Line chart ``` for data visualization.
+   
+      • Please set the variables that you want to display on the widget by clicking ``` + ADD VARIABLE ```, then click ``` ✅ Checklist ``` to save.
+   
+      • If you want to change the content of the widget, please click the ``` pencil ``` symbol -> if so, then click ``` ✅ Checklist ``` to save.
+
+   </td></tr></table><br>
+
+4. Creating switch widget :
+
+   <table><tr><td width="810">
+   
+      • Make sure you are in the ``` Dashboards ``` menu.
+   
+      • Click ``` + Add new widget ```.
+   
+      • Select ``` Switch ``` for ON/OFF control and for DC motor rotation direction control.
+   
+      • Please set the variables that you want to display on the widget by clicking ``` + ADD VARIABLE ```, then click ``` ✅ Checklist ``` to save.
+   
+      • If you want to change the content of the widget, please click the ``` pencil ``` symbol -> if so, then click ``` ✅ Checklist ``` to save.
+
+   </td></tr></table><br>
+
+5. Firmware configuration : 
+
+   <table><tr><td width="810">
+   
+      • Click the ``` User ``` section in the bottom left corner -> then select ``` API Credentials ```.
+   
+      • Copy the ``` Default token ``` -> paste it into the firmware code. An example is as follows:
+
+      <table><tr><td width="780">
+   
+      ```ino
+      const String token = "BBUS-aRZvtYRMM7IWbrKFcICR30YYP7dh5Q"; // define ubidots token
+      ```
+
+      </td></tr></table>
+
+   </td></tr></table>
 
 <br><br>
 
