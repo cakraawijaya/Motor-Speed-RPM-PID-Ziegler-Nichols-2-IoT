@@ -381,7 +381,7 @@ void loop() {
    
       • Select ``` Line chart ``` for data visualization.
    
-      • Please set the variables that you want to display on the widget by clicking ``` + ADD VARIABLE ```, then click ``` ✅ Checklist ``` to save.
+      • Please set the variables that you want to use on the widget by clicking ``` + ADD VARIABLE ```, then click ``` ✅ Checklist ``` to save.
    
       • If you want to change the content of the widget, please click the ``` pencil ``` symbol -> if so, then click ``` ✅ Checklist ``` to save.
 
@@ -397,13 +397,29 @@ void loop() {
    
       • Select ``` Switch ``` for ON/OFF control and for DC motor rotation direction control.
    
-      • Please set the variables that you want to display on the widget by clicking ``` + ADD VARIABLE ```, then click ``` ✅ Checklist ``` to save.
+      • Please set the variables that you want to use on the widget by clicking ``` + ADD VARIABLE ```, then click ``` ✅ Checklist ``` to save.
    
       • If you want to change the content of the widget, please click the ``` pencil ``` symbol -> if so, then click ``` ✅ Checklist ``` to save.
 
    </td></tr></table><br>
 
-5. Firmware configuration : 
+5. Creating indicator widget :
+
+   <table><tr><td width="810">
+   
+      • Make sure you are in the ``` Dashboards ``` menu.
+   
+      • Click ``` + Add new widget ```.
+   
+      • Select ``` Indicator ``` for ON/OFF control and for DC motor rotation direction control.
+   
+      • Please set the variables that you want to use on the widget by clicking ``` + ADD VARIABLE ```, then click ``` ✅ Checklist ``` to save.
+   
+      • If you want to change the content of the widget, please click the ``` pencil ``` symbol -> if so, then click ``` ✅ Checklist ``` to save.
+
+   </td></tr></table><br>
+
+6. Firmware configuration : 
 
    <table><tr><td width="810">
    
