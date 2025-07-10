@@ -352,7 +352,7 @@ void loop() {
 
    </td></tr></table><br>
 
-2. Membuat dashboards : 
+2. Membuat dasbor :
 
    <table><tr><td width="810">
    
@@ -531,7 +531,7 @@ void loop() {
 <br><br>
 <strong>Informasi lebih lanjut:</strong><br>
 <table><tr><td width="840">
-   • Skripsi : <a href="https://repository.upnjatim.ac.id/38675"><u>Akses 1</u></a> or <a href="https://github.com/cakraawijaya/Motor-Speed-RPM-PID-Ziegler-Nichols-2-IoT/tree/master/Assets/Documentation/Report"><u>Akses 2</u></a><br><br>
+   • Skripsi : <a href="https://repository.upnjatim.ac.id/38675"><u>Akses 1</u></a> atau <a href="https://github.com/cakraawijaya/Motor-Speed-RPM-PID-Ziegler-Nichols-2-IoT/tree/master/Assets/Documentation/Report"><u>Akses 2</u></a><br><br>
    • Jurnal : <a href="https://journal.citradharma.org/index.php/literasinusantara/article/view/1593"><u>Klik Disini</u></a>
 </td></tr></table>
 
