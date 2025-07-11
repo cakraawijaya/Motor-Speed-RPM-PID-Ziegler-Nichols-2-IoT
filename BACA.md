@@ -280,7 +280,7 @@ void loop() {
       Cara mengatur board ``` DOIT ESP32 DEVKIT V1 ```
             
       </th></tr>
-      <tr><td>
+      <tr><td width="810">
       
       • Klik ``` Tools ``` -> ``` Board ``` -> ``` Boards Manager ``` -> Instal ``` esp32 ```.
    
